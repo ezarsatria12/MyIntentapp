@@ -1,0 +1,41 @@
+<html>
+<head>
+<title>MoveWithObjectActivity.kt</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #cc7832;}
+.s1 { color: #a9b7c6;}
+.s2 { color: #6a8759;}
+</style>
+</head>
+<body bgcolor="#2b2b2b">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#606060" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+MoveWithObjectActivity.kt</font>
+</center></td></tr></table>
+<pre><span class="s0">package </span><span class="s1">com.nunu.myintentapp</span>
+
+<span class="s1">import androidx.appcompat.app.AppCompatActivity</span>
+<span class="s1">import android.os.Bundle</span>
+<span class="s1">import android.widget.TextView</span>
+
+<span class="s0">class </span><span class="s1">MoveWithObjectActivity : AppCompatActivity() {</span>
+
+    <span class="s1">companion </span><span class="s0">object </span><span class="s1">{</span>
+        <span class="s1">const </span><span class="s0">val </span><span class="s1">EXTRA_PERSON = </span><span class="s2">&quot;extra_person&quot;</span>
+    <span class="s1">}</span>
+
+    <span class="s1">override </span><span class="s0">fun </span><span class="s1">onCreate(savedInstanceState: Bundle?) {</span>
+        <span class="s0">super</span><span class="s1">.onCreate(savedInstanceState)</span>
+        <span class="s1">setContentView(R.layout.activity_move_with_object)</span>
+
+        <span class="s0">val </span><span class="s1">tvObject:TextView = findViewById(R.id.tv_object_received)</span>
+
+        <span class="s0">val </span><span class="s1">person = intent.getParcelableExtra(EXTRA_PERSON) </span><span class="s0">as </span><span class="s1">Person</span>
+        <span class="s0">val </span><span class="s1">text = </span><span class="s2">&quot;Name : </span><span class="s0">${</span><span class="s1">person.name.toString()</span><span class="s0">}</span><span class="s2">,</span><span class="s0">\n</span><span class="s2">Email : </span><span class="s0">${</span><span class="s1">person.email</span><span class="s0">}</span><span class="s2">,</span><span class="s0">\n</span><span class="s2">Age : </span><span class="s0">${</span><span class="s1">person.age</span><span class="s0">}</span><span class="s2">,</span><span class="s0">\n</span><span class="s2">Location : </span><span class="s0">${</span><span class="s1">person.city</span><span class="s0">}</span><span class="s2">&quot;</span>
+        <span class="s1">tvObject.text = text</span>
+    <span class="s1">}</span>
+<span class="s1">}</span></pre>
+</body>
+</html>
